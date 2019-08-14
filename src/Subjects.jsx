@@ -8,13 +8,10 @@ import ListSubheader from '@material-ui/core/ListSubheader';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
 import HelpIcon from '@material-ui/icons/Help';
+import { navigate } from '@reach/router';
+import { subjects } from "./db.json";
 
-const subjectsList = [
-  ['Arquitectura', 'Introduccion a Objetos', 'Programacion 3'],
-  ['Sistemas operativos', 'Telecomunicaciones', 'Procesos'],
-  ['Sistemas operativos', 'Telecomunicaciones', 'Procesos'],
-  ['Sistemas operativos', 'Telecomunicaciones', 'Procesos']
-]
+const subjectsList = [ subjects ]
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -38,18 +35,18 @@ const Subjects = () => {
   const classes = useStyles();
   return (
     <List className={classes.root} subheader={<li/>}>
-      {[1, 2, 3, 4].map((quarter, index) => (
-        <li key={`quarter-${quarter}`} className={classes.listSection}>
+      {subjectsList.map((quarter, index) => (
+        <li key={`quarter-${index + 1}`} className={classes.listSection}>
           <ul className={classes.ul}>
             <ListSubheader disableSticky>
-              {`Quarter ${quarter}`}
+              {`Quarter ${index + 1}`}
             </ListSubheader>
             <Divider component='li' />
-            {subjectsList[index].map(subject => (
-              <Fragment key={`subject-${subject}`}>
-                <ListItem alignItems='flex-start'>
+            {quarter.map(subject => (
+              <Fragment key={`subject-${subject.slug}`}>
+                <ListItem alignItems='flex-start' onClick={() => navigate(`/subject/${subject.slug}`)}>
                   <ListItemText 
-                    primary={subject}
+                    primary={subject.name}
                     secondaryTypographyProps={{ display: 'block'}}
                     secondary={
                       <Fragment>
@@ -57,13 +54,13 @@ const Subjects = () => {
                           variant="body2"
                           color="textSecondary"
                         >
-                          Lunes - 18.30 a 22.30
+                          {`${subject.day} - ${subject.period}`}
                         </Typography>
                         <Typography
                           variant="body2"
                           color="textSecondary"
                         >
-                          Aula 101
+                          {`Aula ${subject.classroom} - ${subject.teacher}`}
                         </Typography>
                       </Fragment>
                     }

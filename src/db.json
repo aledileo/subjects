@@ -1,0 +1,64 @@
+{
+  "subjects": [
+    {
+      "id": 1,
+      "name": "Arquitectura de Computadoras",
+      "slug": "arq",
+      "marks": [4, 4, null, null, 10],
+      "classroom": "801",
+      "teacher": "Jim Halpert",
+      "day": "Monday",
+      "period": "Night",
+      "year": "2019",
+      "quarter": "1"
+    }, 
+    {
+      "id": 2,
+      "name": "Sistemas Operativos",
+      "slug": "so",
+      "marks": [4, 5, 8, null, 10],
+      "classroom": "402",
+      "teacher": "Dwight Schrutte",
+      "day": "Tuesday",
+      "period": "Night",
+      "year": "2019",
+      "quarter": "1"
+    },
+    {
+      "id": 3,
+      "name": "Programación 3",
+      "slug": "progra3",
+      "marks": [7, 7, null, null, 10],
+      "classroom": "503",
+      "teacher": "Michael Scott",
+      "day": "Wednesday",
+      "period": "Night",
+      "year": "2019",
+      "quarter": "1"
+    },
+    {
+      "id": 4,
+      "name": "Procesos y sistemas administrtivos",
+      "slug": "procesos",
+      "marks": [2, 8, null, null, 5],
+      "classroom": "801",
+      "teacher": "Pam Beesly",
+      "day": "Thursday",
+      "period": "Night",
+      "year": "2019",
+      "quarter": "1"
+    },
+    {
+      "id": 5,
+      "name": "Metodologías de Desarrollo",
+      "slug": "metodologias",
+      "marks": [7, 2, null, 7, 5],
+      "classroom": "801",
+      "teacher": "Stanley Hudson",
+      "day": "Friday",
+      "period": "Night",
+      "year": "2019",
+      "quarter": "1"
+    }
+  ]
+}
